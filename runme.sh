@@ -15,7 +15,7 @@ set -ex
 CONF_DIR="/etc/cjdns"
 
 if [ "$1" == "--setup" ]; then
-	docker build -t mildred/cjdns .
+	docker build -t meirm/cjdns .
 	exit $?
 fi
 
@@ -25,4 +25,4 @@ shift
 
 exec docker run -it --rm --name=$name \
                 --cap-add=NET_ADMIN --device=/dev/net/tun \
-                --volume="$(pwd)/conf/$name:$CONF_DIR" mildred/cjdns $@
+                --volume="$(pwd)/conf/$name:$CONF_DIR" meirm/cjdns $@
