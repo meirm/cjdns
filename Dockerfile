@@ -1,5 +1,5 @@
 FROM debian:stable
-MAINTAINER mildred
+MAINTAINER meirm
 
 # Prepare
 RUN { \
@@ -25,7 +25,6 @@ RUN { \
 RUN { \
   ln -s /usr/bin/nodejs /usr/bin/node; \
   install -m755 -oroot -groot /usr/src/cjdns/cjdroute /usr/bin/cjdroute; \
-  mkdir -p /usr/share/cjdns/
   mkdir -p /etc/cjdns; \
 }
 
