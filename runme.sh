@@ -14,8 +14,10 @@ set -ex
 # Location of cjdroute.conf within the container
 CONF_DIR="/etc/cjdns"
 
+IMAGE=meirm/cjdns
+
 if [ "$1" == "--setup" ]; then
-	docker build -t meirm/cjdns .
+	docker build -t $IMAGE .
 	exit $?
 fi
 
@@ -25,4 +27,4 @@ shift
 
 exec docker run -it --rm --name=$name \
                 --cap-add=NET_ADMIN --device=/dev/net/tun \
-                --volume="$(pwd)/conf/$name:$CONF_DIR" meirm/cjdns $@
+                --volume="$(pwd)/conf/$name:$CONF_DIR" $IMAGE $@

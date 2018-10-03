@@ -23,9 +23,10 @@ RUN { \
 
 # Install
 RUN { \
-  ln -s /usr/bin/nodejs /usr/bin/node; \
   install -m755 -oroot -groot /usr/src/cjdns/cjdroute /usr/bin/cjdroute; \
   mkdir -p /etc/cjdns; \
+  ln -s /usr/bin/nodejs /usr/bin/node; \
+  echo  'export PATH="${PATH}:/usr/src/cjdns/tools"' > /root/.bashrc; \
 }
 
 # Clean

@@ -9,7 +9,7 @@ To be useful you'll have to run this in privileged mode, with the
 same network stack as the host. This can be acomplished using the
 docker options `--privileged --net=host`.
 
-    docker pull mildred/cjdns
+    docker pull meirm/cjdns
     docker run --privileged --net=host --volume /etc/cjdns:/etc/cjdns meirm/cjdns
 
 For testing purpose you can run it without privileged mode and then 
