@@ -25,6 +25,7 @@ fi
 shift
 
 
-exec docker run -it --rm --name=$name \
+exec docker run  -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 \
+-it --rm --name=$name \
                 --cap-add=NET_ADMIN --device=/dev/net/tun \
                 --volume="$(pwd)/conf/$name:$CONF_DIR" $IMAGE $@
